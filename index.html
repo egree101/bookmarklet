@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head><meta charset="UTF-8"><title>테스트</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>테스트</title>
+  <style>
+    .bookmarklet-button {
+      font-size: 20px;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+    }
+  </style>
+</head>
 <body>
   <h1>모바일 북마클릿 테스트</h1>
-  <a href="javascript:(function(){alert('작동합니다! 🎉');})();"
-     style="font-size:20px;padding:10px;background:#4CAF50;color:white;text-decoration:none;border-radius:8px;">
+
+  <a href="#" class="bookmarklet-button"
+     onclick="(function(){alert('작동합니다! 🎉');})(); return false;">
      북마클릿 실행
   </a>
 </body>
