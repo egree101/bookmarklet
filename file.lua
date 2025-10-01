@@ -1,1 +1,18 @@
-print("Hello World")
+while task.wait() do
+	local Players = game:GetService("Players")
+	local playersToTeleport = {}
+        for _, player in ipairs(Players:GetPlayers()) do
+        	if player ~= localPlayer then
+            		table.insert(playersToTeleport, player)
+        	end
+    	end
+	for _, player in ipairs(playersToTeleport) do
+		local args = {
+			game:GetService("Players").LocalPlayer.Character:WaitForChild("Fists"),
+			"Hit",
+			game:GetService("Players"):WaitForChild(player.Name).Character
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("CombatRemotes"):WaitForChild("Server"):WaitForChild("Attack"):FireServer(unpack(args))
+	end
+end
+
